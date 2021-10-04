@@ -51,15 +51,15 @@
 
 
 \noindent {\begin{CJK}{UTF8}{bsmi}
-{\bf 班級:} 通訊所
+{\bf 班級:} 資應所
 \end{CJK}}
 
 \noindent  {\begin{CJK}{UTF8}{bsmi}
-{\bf 姓名:} 王小明
+{\bf 姓名:} 鄭程哲
 \end{CJK}}
 
 \noindent {\begin{CJK}{UTF8}{bsmi}
-{\bf 學號:} 105061199
+{\bf 學號:} 110065512
 \end{CJK}}
 
 \bigskip
@@ -82,7 +82,22 @@
 
 \bsolution
 %---------------------------------------------------------------------------
-Type your answer here.
+
+(a) $\begin{bmatrix}
+	0 & 1 & 0 & 0 & 1 \\
+	0 & 0 & 1 & 0 & 0 \\
+	1 & 0 & 0 & 0 & 1 \\
+	0 & 1 & 1 & 0 & 0 \\
+	0 & 0 & 0 & 0 & 0 
+	\end{bmatrix}$
+
+(b) Cocitation matrix $C = AA^{T} = \begin{bmatrix}
+	2 & 0 & 1 & 1 & 0 \\
+	0 & 1 & 0 & 1 & 0 \\
+	1 & 0 & 2 & 0 & 0 \\
+	1 & 1 & 0 & 2 & 0 \\
+	0 & 0 & 0 & 0 & 0
+\end{bmatrix}$
 %---------------------------------------------------------------------------
 \esolution
 
@@ -104,7 +119,24 @@ Type your answer here.
 
 \bsolution
 %---------------------------------------------------------------------------
-Type your answer here.
+
+(a) I regard white dots as different groups and black dots as vertexs.\\
+	Incidence matrix = $B = \begin{bmatrix}
+	1 & 0 & 1 & 0 & 0 \\
+	0 & 1 & 1 & 0 & 0 \\
+	0 & 0 & 0 & 1 & 0 \\
+	0 & 1 & 1 & 1 & 1 
+\end{bmatrix}$
+
+
+(b) Projection matrix $P = B^{T}B =\begin{bmatrix}
+	1 & 0 & 1 & 0 & 0 \\
+	0 & 2 & 2 & 1 & 1 \\
+	1 & 2 & 3 & 1 & 1 \\
+	0 & 1 & 1 & 2 & 1 \\
+	0 & 1 & 1 & 1 & 1
+	\end{bmatrix} $
+
 %---------------------------------------------------------------------------
 \esolution
 
@@ -118,7 +150,11 @@ Consider a bipartite network, with its two types of vertices. Suppose there are 
 
 \bsolution
 %---------------------------------------------------------------------------
-Type your answer here.
+If there are $m$ edges between two types of vertices, The mean degree of type 1 vertices\\[0.6em]
+$c_1=\frac{m}{n_1}$, and $c_2=\frac{m}{n_2}$. Therefore, 
+$\frac{c_1}{c_2}=\frac{\frac{m}{n_1}}{\frac
+	{m}{n_2}}=\frac{n_2}{n_1}$, and we get 
+$c_2=\frac{n_1}{n_2}c_1$.
 %---------------------------------------------------------------------------
 \esolution
 
