@@ -178,13 +178,60 @@ Given
 
 \bsolution
 %---------------------------------------------------------------------------
-Type your answer here.
+
+(a) Eigenvalues can be obtained by the equation: $Ax=\lambda x$, 
+and $(A-\lambda I)$ is a singular matrix. Therefore, $det(A-\lambda I)=0$. \\
+\[det(A-\lambda I)=det
+	\begin{pmatrix}
+		0-\lambda & 2 & -1 \\
+		2 & 3-\lambda & -2 \\
+		-1 & -2 & 0-\lambda
+	\end{pmatrix}=0
+\]
+\[-\lambda^3+3\lambda^2+9\lambda+5=0\]
+\[Eigenvalues(\lambda)= -1, -1, 5\]
+
+(b) Orthogonal matrix is composed by eigenvectors of $A$.
+\begin{enumerate}
+	\item When $\lambda=-1, A-(-1)I=
+	\begin{pmatrix}
+		1 & 2 & -1 \\
+		2 & 4 & -2 \\
+		-1 & -2 & 1
+	\end{pmatrix}\sim
+	\begin{pmatrix}
+		1 & 2 & -1 \\
+		0 & 0 & 0 \\
+		0 & 0 & 0
+	\end{pmatrix}$. So a normalized eigenvector for $\lambda _1=-1$ is 
+	$v_1=(\frac{1}{\sqrt{2}}, 0, \frac{1}{\sqrt{2}})$.
+	\item When $\lambda=5, A-(5)I=
+	\begin{pmatrix}
+		-5 & 2 & -1 \\
+		2 & -2 & -2 \\
+		-1 & -2 & -5
+	\end{pmatrix}\sim
+	\begin{pmatrix}
+		1 & -1 & -1 \\
+		-5 & 2 & -1 \\
+		-1 & -2 & -5
+	\end{pmatrix}\sim
+	\begin{pmatrix}
+		1 & 0 & 1 \\
+		0 & 1 & 2 \\
+		0 & 0 & 0
+	\end{pmatrix}$. So a normalized eigenvector for $\lambda _1=-1$ is 
+	$v_1=(\frac{-1}{\sqrt{6}}, \frac{-2}{\sqrt{6}}, \frac{1}{\sqrt{6}})$.
+\end{enumerate}
+\qquad\quad Finally, orthogonal matrix $U=
+	\begin{pmatrix}
+		\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{6}} \\[0.4em]
+		0 & 0 & \frac{-2}{\sqrt{6}} \\[0.4em]
+		\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}}
+	\end{pmatrix}$.
 %---------------------------------------------------------------------------
 \esolution
 
-
-
-\newpage
 %---------------------------------------------------------------------------
 % Problem 5
 %---------------------------------------------------------------------------
@@ -195,9 +242,24 @@ Paste your screenshots of “Hello, World!” of both Python 3 (5\%) and python-
 
 \bsolution
 %---------------------------------------------------------------------------
-Type your answer here.
+I didn't encounter any problem during the installation of both Python and Python-iGraph.
+Additionally, I didn't meet the issue the tutorial has mentioned about installing Python-iGraph on Windows. I installed it directly by typing pip command in command line.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{fig-prob5-python.png}
+	\caption{Python screenshot.}
+	\label{HW1_5_python}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{fig-prob5-igraph.png}
+	\caption{Python-iGraph screenshot.}
+	\label{HW1_5_igraph}
+\end{figure}
 %---------------------------------------------------------------------------
 \esolution
+\newpage
 
 %---------------------------------------------------------------------------
 % Problem 6
@@ -216,7 +278,20 @@ You need to upload your {\bf python source code} to iLMS, and {\bf write a brief
 
 \bsolution
 %---------------------------------------------------------------------------
-Type your answer here.
+\begin{itemize}
+	\item Number of nodes: 3892
+	\item Number of edges: 8631
+	\item Mean degree: 4.4352517985611515
+	\item Maximum degree: 67
+	\item Diameter: 28
+\end{itemize}
+My code is divided into two major part. The first part is to create whole graph by the dataset. I used a loop to read each row and add vertices and edges in the graph. The second part is to output the reslut. Because iGraph is powerful and very convenience, I simply called built-in methods to get the information I need. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig-prob6.png}
+	\caption{Result screenshot.}
+	\label{HW1_6}
+\end{figure}
 %---------------------------------------------------------------------------
 \esolution
 
