@@ -5,10 +5,11 @@ def createGraph():
     nodes = []
     max_vertex_id = 0
     with open('tvshow_edges.csv') as f:
-        f.readline()
+        f.readline() # line of attribute name
         for line in f:
             nodes.append([int(s) for s in f.readline().split(',')])
             for n in nodes[len(nodes) - 1]:
+                # find the maximum id number of vertices
                 max_vertex_id = max(max_vertex_id, n)
     g.add_vertices(max_vertex_id + 1)
     for i in range(len(nodes)):
