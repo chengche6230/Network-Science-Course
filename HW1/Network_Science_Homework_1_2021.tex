@@ -203,8 +203,23 @@ and $(A-\lambda I)$ is a singular matrix. Therefore, $det(A-\lambda I)=0$. \\
 		1 & 2 & -1 \\
 		0 & 0 & 0 \\
 		0 & 0 & 0
+	\end{pmatrix}$. The eigenvector is the form: 
+	$\begin{pmatrix}
+		s+2t \\
+		-t \\
+		s
+	\end{pmatrix}= s
+	\begin{pmatrix}
+		1 \\
+		0 \\
+		1
+	\end{pmatrix} + t 
+	\begin{pmatrix}
+		2 \\
+		-1 \\
+		0
 	\end{pmatrix}$. So a normalized eigenvector for $\lambda _1=-1$ is 
-	$v_1=(\frac{1}{\sqrt{2}}, 0, \frac{1}{\sqrt{2}})$.
+	$v_1=(\frac{1}{\sqrt{2}}, 0, \frac{1}{\sqrt{2}}), v_2=(\frac{2}{\sqrt{5}}, \frac{-1}{\sqrt{5}}, 0)$.
 	\item When $\lambda=5, A-(5)I=
 	\begin{pmatrix}
 		-5 & 2 & -1 \\
@@ -225,9 +240,9 @@ and $(A-\lambda I)$ is a singular matrix. Therefore, $det(A-\lambda I)=0$. \\
 \end{enumerate}
 \qquad\quad Finally, orthogonal matrix $U=
 	\begin{pmatrix}
-		\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{6}} \\[0.4em]
-		0 & 0 & \frac{-2}{\sqrt{6}} \\[0.4em]
-		\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}}
+		\frac{1}{\sqrt{2}} & \frac{2}{\sqrt{5}} & \frac{-1}{\sqrt{6}} \\[0.4em]
+		0 & \frac{-1}{\sqrt{5}} & \frac{-2}{\sqrt{6}} \\[0.4em]
+		\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{6}}
 	\end{pmatrix}$.
 %---------------------------------------------------------------------------
 \esolution
@@ -280,10 +295,10 @@ You need to upload your {\bf python source code} to iLMS, and {\bf write a brief
 %---------------------------------------------------------------------------
 \begin{itemize}
 	\item Number of nodes: 3892
-	\item Number of edges: 8631
-	\item Mean degree: 4.4352517985611515
-	\item Maximum degree: 67
-	\item Diameter: 28
+	\item Number of edges: 17262
+	\item Mean degree: 8.870503597122303
+	\item Maximum degree: 126
+	\item Diameter: 20(undirected network); 14(directed network)
 \end{itemize}
 My code is divided into two major part. The first part is to create whole graph by the dataset. I used a loop to read each row and add vertices and edges in the graph. The second part is to output the reslut. Because iGraph is powerful and very convenience, I simply called built-in methods to get the information I need. 
 \begin{figure}[h]

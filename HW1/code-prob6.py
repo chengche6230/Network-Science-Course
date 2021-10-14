@@ -1,13 +1,13 @@
 from igraph import *
 
 def createGraph():
-    g = Graph()
+    g = Graph(directed=False)
     nodes = []
     max_vertex_id = 0
     with open('tvshow_edges.csv') as f:
         f.readline() # line of attribute name
-        for line in f:
-            nodes.append([int(s) for s in f.readline().split(',')])
+        for line in f.readlines():
+            nodes.append([int(s) for s in line.split(',')])
             for n in nodes[len(nodes) - 1]:
                 # find the maximum id number of vertices
                 max_vertex_id = max(max_vertex_id, n)
