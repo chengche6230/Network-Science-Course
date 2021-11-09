@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+
+\usepackage{CJKutf8}
+% 打中文時請務必加這個Package
+
+\usepackage{epsfig,amsmath,amssymb,latexsym}
+\usepackage{graphicx,epsfig,color,epsf,psfrag,hhline,amsmath,amssymb,textcomp}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\setlength {\topmargin}{-1.0in}
+\setlength {\textheight}{10in}
+\setlength {\oddsidemargin}{-0.25in}
+\setlength {\evensidemargin}{-0.25in}
+\setlength {\textwidth}{6.75in}
+\setlength {\parskip}{8pt plus 2pt minus 1pt}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}[section]
+
+\newcommand{\comb}[2]{\left (\begin{array}{c} #1 \\ #2 \end{array} \right )}
+
+\newcommand{\inlinecomb}[2]{\mbox{\scriptsize $\left (\begin{array}{c} #1 \\ #2 \end{array} \right )$\normalsize}}
+
+\newcommand {\bsolution}{\noindent {\em Solution:} \ }
+
+\newcommand{\esolution}{\hfill $\Diamond$ \\ \vspace{.3cm}}
+
+%************************** Figure**********************************
+\newcommand {\bfig}[2] {\begin{figure}[htbp]
+                        \centerline {
+                         \epsfig{figure={#1},clip=,width={#2}}}}
+
+\newcommand {\efig}[2]{ \caption{#2}
+                        \label{fig:#1}
+                        \end{figure}
+                        \mymarginpar{fig:#1}}
+\newcommand {\rfig}[1]{Figure \ref{fig:#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\Large \noindent COM 530500 {\bf Network Science Homework \#2} \\
+\large {{\sc Due:} Thursday, November 11, 2021}  \\
+}
+\emph{No late homework will be accepted}.
+\end{center}
+
+
+\noindent {\begin{CJK}{UTF8}{bsmi}
+{\bf 班級:} 資應所
+\end{CJK}}
+
+\noindent  {\begin{CJK}{UTF8}{bsmi}
+{\bf 姓名:} 鄭程哲
+\end{CJK}}
+
+\noindent {\begin{CJK}{UTF8}{bsmi}
+{\bf 學號:} 110065512
+\end{CJK}}
+
+\bigskip
+
+%---------------------------------------------------------------------------
+% Problem 1
+%---------------------------------------------------------------------------
+
+\noindent {\bf Problem 1.\bf(40\%)} Consider a $k$-regular undirected network (i.e., a network in which every vertex has degree $k$) with number of nodes $n$.
+\begin{enumerate}[label=(\alph*)]
+	\item (10\%) Show that the $n$-vector ${\bf 1}_n = [1,1,\ldots,1]$ is an eigenvector of the adjacency matrix with corresponding eigenvalue $k$. 
+	\item (10\%) By making use of the fact that eigenvectors are orthogonal (or otherwise), show that there is no other eigenvector that has all elements positive. [{\it Note: The Perron-Frobenius theorem says that the eigenvector with all elements positive has the largest eigenvalue, and hence the eigenvector ${\bf 1}_n$ gives, by definition, the eigenvector centrality of our $k$-regular network and the centralities are the same for every vertex.}]
+	\item (10\%) Find the {\bf Katz centralities} of all vertices in a $k$-regular network.
+	\item (10\%) Find a centrality measure that can give different centralities for different vertices in a regular network. Please provide a specific example.
+\end{enumerate}
+
+\bsolution
+%---------------------------------------------------------------------------
+Type your answer here.
+%---------------------------------------------------------------------------
+\esolution
+
+
+
+\newpage
+%---------------------------------------------------------------------------
+% Problem 2
+%---------------------------------------------------------------------------
+\noindent {\bf Problem 2.\bf(60\%)}
+Please find a real dataset from the Internet. ({\bf Note: You need to cite the dataset in the reference.}) Note that this dataset should be an undirected network, and the total number of nodes should be greater than $500$. {\bf Please do not use the same dataset in Homework \#1.}
+
+\begin{enumerate}[label=(\alph*)]
+	\item (10\%) Briefly introduce this dataset, and list some basic statistical information, such as the number of nodes, number of edges, average clustering coefficient, diameter, average degree, maximum degree, etc.
+	\item (10\%) Please visualize the dataset by plotting it. 
+	\item (20\%) Please implement the Katz centrality measure (textbook chapter $7.3$ \cite{newman2010networks}) {\bf without} using the katz\_centrality function and the katz\_centrality\_numpy function provided by NetworkX, and find the top 10 nodes ranked by the Katz centrality measure you've written.
+	\item (10\%) Please find the top 10 nodes by two other different centrality measures (you can use any packages and functions).
+	\item (5\%) Are the top 10 nodes ranked by different centrality measures in (c) and (d) the same? Explain why?
+	\item (5\%) Is there a best centrality measure for ranking this dataset? Explain why?
+\end{enumerate}
+
+\bsolution
+%---------------------------------------------------------------------------
+Type your answer here.
+%---------------------------------------------------------------------------
+\esolution
+
+%---------------------------------------------------------------------------
+% The end of problems.
+%---------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------
+% References
+%---------------------------------------------------------------------------
+\begin{thebibliography}{9}
+\bibitem{newman2010networks} Newman, Mark. \emph{Networks: An Introduction.} Oxford University Press, 2010.
+\end{thebibliography}
+
+\end{document}
