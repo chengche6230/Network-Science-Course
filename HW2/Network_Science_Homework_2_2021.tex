@@ -84,7 +84,13 @@
 	\item The result of adjacency matrix multiplying $n$-vector $1_n$ is equal to the row sum, which means the degree of each node, i.e., $k$. Therefore, $n$-vector $1_n$ is an eigenvector of the adjacency matrix with corresponding wigenvalue $k$.
 	\item Eigenvectors are orthogonal if and only if their dot product is zero. If there is other eigenvector $v$ has all elements positive, $1_n \cdot v$ must bigger than 0.
 	\item Katz centralities of all vertices $x=\beta (I-\alpha A)^{-1} 1$, where $1$ is the vector $(1, 1, 1, ..., 1)^T$, $\alpha\in [0, \frac{1}{k})$, and $\beta$ is defined by the user.
-	\item No such measure exists.
+	\item It's hard to answer this question. I wrote a python program (code-prob1d.ipynb) to see the centrality value of regular network with $n\in [3, 8], k\in [2, n)$. There is very tiny difference between measures. Take $n=4, k=2$ for example, PageRank gives different centralities for different vertices, i.e. 0.25, 0.24999999999999994, 0.24999999999999994, 0.25, respectively. Another example is shown in Figure 1, when $n=7, k=2$, harmonic centralities equal to 0.33333333, 0.41666667, 0.41666667, 0.41666667, 0.41666667, 0.33333333,	0.33333333, respectively. This example shows obvious difference between the centralities of vertices. However, this network isn't connected.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{fig-prob1d.png}
+		\caption{2-regular network with 7 nodes.}
+		\label{HW2_1}
+	\end{figure}
 \end{enumerate}
 %---------------------------------------------------------------------------
 \esolution
@@ -119,7 +125,7 @@ Please find a real dataset from the Internet. ({\bf Note: You need to cite the d
 		\item Average degree: 6.17
 		\item Maximum degree: 39
 	\end{itemize}
-	\item Visualization is shown in Figure 1.
+	\item Visualization is shown in Figure 2.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\textwidth]{fig-prob2b.png}
