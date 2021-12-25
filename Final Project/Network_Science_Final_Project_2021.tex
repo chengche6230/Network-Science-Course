@@ -1,0 +1,153 @@
+\documentclass[12pt]{article}
+
+\usepackage{CJKutf8}
+% 打中文時請務必加這個Package
+
+\usepackage{epsfig,amsmath,amssymb,latexsym}
+\usepackage{graphicx,epsfig,color,epsf,psfrag,hhline,amsmath,amssymb,textcomp}
+%\usepackage{hyperref}
+\usepackage{enumitem}
+
+\setlength {\topmargin}{-1.0in}
+\setlength {\textheight}{10in}
+\setlength {\oddsidemargin}{-0.25in}
+\setlength {\evensidemargin}{-0.25in}
+\setlength {\textwidth}{6.75in}
+\setlength {\parskip}{8pt plus 2pt minus 1pt}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}[section]
+
+\newcommand{\comb}[2]{\left (\begin{array}{c} #1 \\ #2 \end{array} \right )}
+
+\newcommand{\inlinecomb}[2]{\mbox{\scriptsize $\left (\begin{array}{c} #1 \\ #2 \end{array} \right )$\normalsize}}
+
+\newcommand {\bsolution}{\noindent {\em Solution:} \ }
+
+\newcommand{\esolution}{\hfill $\Diamond$ \\ \vspace{.3cm}}
+
+%************************** Figure**********************************
+\newcommand {\bfig}[2] {\begin{figure}[htbp]
+                        \centerline {
+                         \epsfig{figure={#1},clip=,width={#2}}}}
+
+\newcommand {\efig}[2]{ \caption{#2}
+                        \label{fig:#1}
+                        \end{figure}
+                        \mymarginpar{fig:#1}}
+\newcommand {\rfig}[1]{Figure \ref{fig:#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\Large \noindent COM 530500 {\bf Network Science Final Project} \\
+\large {{\sc Due:} Thursday, January 20, 2022}  \\
+}
+\emph{No late homework will be accepted}.
+\end{center}
+
+
+\noindent {\begin{CJK}{UTF8}{bsmi}
+{\bf 班級:} 通訊所
+\end{CJK}}
+
+\noindent  {\begin{CJK}{UTF8}{bsmi}
+{\bf 姓名:} 王小明
+\end{CJK}}
+
+\noindent {\begin{CJK}{UTF8}{bsmi}
+{\bf 學號:} 105061199
+\end{CJK}}
+
+\bigskip
+
+
+%---------------------------------------------------------------------------
+% Problem 1
+%---------------------------------------------------------------------------
+
+\noindent {\bf Problem 1. (40\%)} Consider the {\bf ego-Facebook} \cite{leskovec2012learning} dataset. A node in this dataset represents a user on Facebook, and an edge between two nodes represents the relationship between two users.
+\begin{enumerate}[label=(\alph*)]
+	\item (10\%) List some statistical information of this dataset, such as the number of nodes, number of edges, average clustering coefficient, diameter, average degree, maximum degree, etc.
+	\item (10\%) Visualize the dataset by plotting it.
+	\item (10\%) Plot the degree distribution with log-log scale.
+	\item (10\%) List the top 10 nodes ranked by the following centrality measures.
+	\begin{itemize}
+		\item Degree centrality
+		\item Katz centrality
+		\item Eigenvector centrality
+		\item Betweenness centrality
+		\item Closeness centrality
+	\end{itemize}
+\end{enumerate}
+
+\bsolution
+%---------------------------------------------------------------------------
+Type your answer here.
+%---------------------------------------------------------------------------
+\esolution
+
+
+%---------------------------------------------------------------------------
+% Problem 2
+%---------------------------------------------------------------------------
+
+\noindent {\bf Problem 2. (60\%+bonus 10\%)} In this problem, we want to investigate the disease propagation by the independent cascade (IC) model in {\bf ego-Facebook} \cite{leskovec2012learning} dataset. Assume the propagation probability is $\phi$, and the set of seeds nodes $S$ are randomly selected. Collect the set of infected nodes within the distance $D$ of the seed nodes, and calculate the prevalence rate $r_1$ (which is defined by the ratio of the number of infected nodes to the total number of nodes). Set $\phi=0.1, \vert S \vert=5$, and $D$ the diameter of the graph.
+
+\begin{enumerate}[label=(\alph*)]
+	\item (40\%) Simulate the disease propagation by IC model after removing the top $0\%$, $10\%$, $20\%$, $\ldots$, $50\%$ of nodes from the following centrality measures respectively, and calculate the corresponding prevalence rate $r_1$. Please plot the curves of $r_1$ vs. the percentage of nodes removed. ({\it Note: Please run the simulation 100 times and average the results.})
+	\begin{itemize}
+		\item Degree centrality
+		\item Katz centrality
+		\item Eigenvector centrality
+		\item Betweenness centrality
+		\item Closeness centrality
+	\end{itemize}
+	\item (bonus 10\%) Could you find a centrality measure that achieves a better performance?
+	\item (20\%) Write a report to compare and discuss the results of different centrality measures.  
+\end{enumerate}
+
+\bsolution
+%---------------------------------------------------------------------------
+Type your answer here.
+%---------------------------------------------------------------------------
+\esolution
+
+%---------------------------------------------------------------------------
+% The end of problems.
+%---------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------
+\iffalse
+\noindent {\bf Given}: adjacency matrix $A$, transition probability $\phi$, a set of seed nodes $S$, and distance $D$.
+
+\noindent {\bf Step 1}: Obtain $A^\prime$ by removing edges of $A$, where each edge is removed with probability $1-\phi$.
+
+\noindent {\bf Step *}: {\bf Obtain $\tilde{A}$ by removing some specific nodes and all their edges from $A^\prime$.}
+
+\noindent {\bf Step 2}: Define the $n \times 1$ seed vector $x$ by $x_i=1$ for $i \in S$ and $x_i=0$ for $i \notin S$.
+
+\noindent {\bf Step 3}: Calculate $y=(\tilde{A}+I)^Dx$ with the AND and the OR operations.
+
+\noindent {\bf Step 4}: Obtain the number of infected nodes by counting the number of 1's in vector $y$.
+
+\noindent {\bf Step 5}: Repeat {\bf Step 1} to {\bf Step 5} for $100$ times, and average the results.
+
+\noindent {\bf Step 6}: Calculate the prevalence rate $r_1$.
+\fi
+%---------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------
+% References
+%---------------------------------------------------------------------------
+\begin{thebibliography}{9}
+\bibitem{leskovec2012learning}
+J.~Leskovec and J.~J. Mcauley, ``Learning to discover social circles in ego networks,'' in \emph{Advances in neural information processing systems},
+2012, pp. 539--547.
+
+\end{thebibliography}
+
+\end{document}
