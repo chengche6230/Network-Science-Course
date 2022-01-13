@@ -7,6 +7,7 @@
 \usepackage{graphicx,epsfig,color,epsf,psfrag,hhline,amsmath,amssymb,textcomp}
 %\usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{subfigure}
 
 \setlength {\topmargin}{-1.0in}
 \setlength {\textheight}{10in}
@@ -51,15 +52,15 @@
 
 
 \noindent {\begin{CJK}{UTF8}{bsmi}
-{\bf 班級:} 通訊所
+{\bf 班級:} 資應所
 \end{CJK}}
 
 \noindent  {\begin{CJK}{UTF8}{bsmi}
-{\bf 姓名:} 王小明
+{\bf 姓名:} 鄭程哲
 \end{CJK}}
 
 \noindent {\begin{CJK}{UTF8}{bsmi}
-{\bf 學號:} 105061199
+{\bf 學號:} 110065512
 \end{CJK}}
 
 \bigskip
@@ -86,7 +87,41 @@
 
 \bsolution
 %---------------------------------------------------------------------------
-Type your answer here.
+\begin{enumerate}[label=(\alph*)]
+	\item Statistical information:
+	\begin{itemize}
+		\item The number of nodes: $2851$
+		\item The number of edges: $62318$
+		\item Average clustering coefficient: $0.591376$
+		\item Diameter: $14$
+		\item Average degree: $43.7166$
+		\item Maximum degree: $769$
+		\item Minimum degree: $1$
+		\item Density: $0.01534$
+	\end{itemize}
+	\item Visualization is as figure 1 show.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{visualize.png}
+		\caption{Visualization}
+		\label{visualize}
+	\end{figure}
+	\item Degree distribution is as figure 2 show.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{degree dist.png}
+		\caption{Degree distribution}
+		\label{degree}
+	\end{figure}
+	\item 
+	\begin{itemize}
+		\item Degree centrality: 1165 91 0 1862 1681 1606 288 1341 1575 1298
+		\item Katz centrality: 1165 91 1862 1681 0 1606 1341 1575 1298 1493
+		\item Eigenvector centrality: 1606 1551 1575 1790 1431 1561 1493 1741 1581 1349
+		\item Betweenness centrality: 91 1165 0 1110 611 1056 771 892 1181 351
+		\item Closeness centrality: 91 1165 1156 1086 933 1110 1181 1056 147 49
+	\end{itemize}
+\end{enumerate}
 %---------------------------------------------------------------------------
 \esolution
 
@@ -112,7 +147,77 @@ Type your answer here.
 
 \bsolution
 %---------------------------------------------------------------------------
-Type your answer here.
+\begin{enumerate}[label=(\alph*)]
+	\item The experiment results are shown as the following table and figure 3. The bold text in the table means the lowest $r1$ comparing to the other measures. In figure 3(b), I additionally plot the box information corresponding to different measures. \\[1em]
+		\begin{tabular}{|c|l|l|l|l|l|l|}
+			\hline
+			Measure     & 0\% & 10\% & 20\% & 30\% & 40\% & 50\% \\ \hline
+			Degree      & 0.689032 & 0.374749 & 0.120698 & \textbf{0.010463} & \textbf{0.002925} & \textbf{0.002066} \\ \hline
+			Katz        & \textbf{0.687464} & 0.435170 & 0.157306 & 0.026429 & 0.004037 & 0.002413 \\ \hline
+			Eigenvector & 0.689747 & 0.548369 & 0.339309 & 0.186615 & 0.072929 & 0.027938 \\ \hline
+			Betweenness & 0.695184 & \textbf{0.226962} & \textbf{0.094949} & 0.039646 & 0.011122 & 0.002434 \\ \hline
+			Closeness   & 0.693094 & 0.339548 & 0.200284 & 0.110716 & 0.047341 & 0.022210 \\ \hline
+		\end{tabular} \\	
+		\begin{figure}[htbp]
+			\centering
+			\subfigure[Line chart]{
+				\includegraphics[width=0.6\textwidth]{r1.png}
+				\label{r1}
+			}
+			\quad
+			\subfigure[Line chart with box]{
+				\includegraphics[width=0.8\textwidth]{r1_box.png}
+				\label{r1_box}
+			}
+			\caption{$r1$ curve corresponding to different measures and percentage}
+		\end{figure}
+	\\
+	\item I tried other different centrality measures including PageRank, VoteRank, and Harmonic centrality. The experiment results are shown as figure 4. As we can see from the table below, PageRank breaks two best records, which are $20\%$ and $50\%$, respectively. I think PageRank is a quite good centrality measure. Further discussion would be written in the part (c). In contrast, VoteRank and harmonic centrality measures didn't have a better performance. \\ [1em]
+		\begin{tabular}{|c|l|l|l|l|l|l|}
+			\hline
+			Measure       & 0\% & 10\% & 20\% & 30\% & 40\% & 50\% \\ \hline
+			Best from (a) & \textbf{0.687464} & \textbf{0.226962} & 0.094949 & \textbf{0.010463} & \textbf{0.002925} & 0.002066 \\ \hline
+			PageRank      & 0.689937 & 0.276692 & \textbf{0.084177} & 0.015167 & 0.004504 & \textbf{0.001884} \\ \hline
+			VoteRank      & 0.688888 & 0.280277 & 0.086461 & 0.040621 & 0.008362 & 0.009404 \\ \hline
+			Harmonic      & 0.694942 & 0.333560 & 0.176552 & 0.092083 & 0.033385 & 0.018622
+			 \\ \hline
+		\end{tabular} \\
+		\begin{figure}[htbp]
+			\centering
+			\subfigure[Line chart]{
+				\includegraphics[width=0.6\textwidth]{r1_other.png}
+				\label{r1_other}
+			}
+			\quad
+			\subfigure[Line chart with box]{
+				\includegraphics[width=0.8\textwidth]{r1_other_box.png}
+				\label{r1_other_box}
+			}
+			\caption{$r1$ curve corresponding to other measures}
+		\end{figure}
+	\\ \\ \\
+	\item Removing $0\%$ vertices has no difference for different measures, so we can ignore this column. When the percentage of node removal is low (10\%, 20\%), $r1$ drops a lot with betweenness, PageRank, and VoteRank measures. That is, applying this concept into real world, we can use these 3 measures to reduce $r1$ efficiently when the shortage of vaccine occurs.\\ \\
+	For another thing, degree centrality achieves 2 best $r1$, betweenness centrality achieves 1 best $r1$, and PageRank achieves 2 best $r1$ in total. In figure 5, I plot more details about these 3 good measures. The dot in the plot means the average value of $r1$, while the shaded area represents $\pm 1$ standard deviation of mean. As we can see from the figure, the higher percentage of nodes removal, the performance converge more tightly. In other words, the variance of performance is higher if the shaded area is bigger. The performance with high variance would be not accurate. Although both degree centrality and PageRank has 2 best $r1$ records, PageRank achieves the best performance in $50\%$ nodes removal. \\ \\
+	Combining above two points, I, therefore, think PageRank is the best centarlity measures among all in this task.
+		\begin{figure}[htbp]
+			\centering
+			\subfigure[Degree centrality]{
+				\includegraphics[width=0.4\textwidth]{r1_degree.png}
+				\label{r1_degree}
+			}
+			\quad
+			\subfigure[Betweenness centrality]{
+				\includegraphics[width=0.4\textwidth]{r1_betweenness.png}
+				\label{r1_betweenness}
+			}
+			\quad
+			\subfigure[PageRank]{
+				\includegraphics[width=0.4\textwidth]{r1_pagerank.png}
+				\label{r1_pagerank}
+			}
+			\caption{$r1$ curve corresponding to a specific measure}
+		\end{figure}
+\end{enumerate}
 %---------------------------------------------------------------------------
 \esolution
 
